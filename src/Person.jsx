@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-const Tour = ({ id, main_image, ad_text, ad_nickname, gender_dict_id, removeTour }) => {
+const Tour = ({ id, language, genderDictId, msDictId, dateOfBirth, mainImage, adText, adNickname, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
-  const imagePath = `/photo/${main_image}`;
+  const imagePath = `/photo/${mainImage}`;
   return (
     <article className='single-tour'>
-      <img src={imagePath} alt={name} className='img' style={{ width: '250px', height: '250px' }}/>
-      <span className='tour-price'>${gender_dict_id}</span>
+      <img src={imagePath} alt={name} className='img' />   {/*style={{ width: '250px', height: '250px' }}  />*/}
+      <span className='tour-price'>${genderDictId}</span>
       <div className='tour-info'>
-        <h5>{ad_nickname}</h5>
+        <h5>{adNickname}</h5>
 
         <p>
-          {readMore ? ad_text : `${ad_text.substring(0, 200)}...`}
+          {readMore ? adText : `${adText.substring(0, 200)}...`}
           <button className='info-btn' onClick={() => setReadMore(!readMore)}>
             {readMore ? 'show less' : '  read more'}
           </button>
